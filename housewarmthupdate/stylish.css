@@ -45,7 +45,6 @@ p{
     align-content: center;
     z-index: 15;
     border: solid;
-    /* border-color: rgba(0,0,0, 1.00); */
     justify-content: center;   
 }
 #title:hover{
@@ -54,23 +53,21 @@ p{
 #title{
   grid-column: 3/5;
   padding-bottom: 1%;
-  /* color: rgba(300,300,300, 1); */
-  /* background-color: rgb(32,178,170); */
   text-decoration-line: underline;
   text-shadow: black;
   color: rgba(255,255,240, .85);
   font-size: 35px;
   font-size: 2.2vw;
   font-family: 'Share Tech Mono', monospace;
-  /* animation-name: spin, depth;
+  animation-name: spin, depth;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: 3s; */
+  animation-duration: 11s;
   display: block;
   text-align: center;
 }
 /* ANIMATE TITLE */
-/* @keyframes spin {
+@keyframes spin {
   from { transform: rotateY(0deg); }
   to { transform: rotateY(-360deg); }
 }
@@ -80,7 +77,7 @@ p{
   50% { text-shadow: 0 0 black; }
   75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
   100% { text-shadow: 0 0 black; }
-} */
+}
 
 /* ---------------------- */
 /* LOWER NAV BAR (HOLDS BUTTONS) */
@@ -97,7 +94,6 @@ p{
   z-index: -1;
   border: solid;
   border-top: none;
-  /* border-color: rgba(0,0,0, 1.00);    */
   justify-content: center;
 }
 
@@ -109,6 +105,7 @@ nav ul {
   padding: 0;
   z-index: 15;
 }
+
 nav li {
   float: left;
   width: 120px;
@@ -119,6 +116,7 @@ nav li {
   position: relative;
   z-index: 15; 
 }
+
 nav li a {
   display: block;
   width: 100%;
@@ -128,16 +126,19 @@ nav li a {
   z-index: 15;
   font-family: 'Share Tech Mono', monospace; 
 }
+
 nav li a:hover {
   background-color: #20B2AA;
   color: black;
   z-index: 15;
 }
+
 nav ul.sub {
   position: absolute;
   display: none;
   z-index: 15;
 }
+
 nav ul.sub li ul.sub {
   top:0;
   left: 160px;
@@ -160,6 +161,7 @@ nav ul.sub li ul.sub {
   z-index: 15;
   font-family: 'Share Tech Mono', monospace;
 }
+
 .navbtns:hover{
   background-color:#20B2AA;
   color: black;
@@ -168,7 +170,6 @@ nav ul.sub li ul.sub {
 /* ---------------------- */
 /* BIG DIV DISPLAYING MAIN CONTENT */
   #main{
-    /* position: relative; */
     width: 70%;
     padding-bottom: 2%;
     margin-left: 15%;
@@ -180,7 +181,6 @@ nav ul.sub li ul.sub {
     align-content: center;
     z-index: -1;
     border: solid;
-    /* border-color: rgba(0,0,0, 1.00);    */
     border-top: none; 
   }
 
@@ -191,16 +191,14 @@ nav ul.sub li ul.sub {
     flex-direction: column;
     flex-wrap: wrap;
   }
+
   #home span{
     color: rgba(255,255,240, 1);
     font-family: 'Share Tech Mono', monospace;
     font-size: 20px;
     text-align: center;
-    /* text-decoration: underline #20B2AA; */
   }
-  /* #home span:hover{
-    color: white;
-  } */
+
   /* HOME PAGE GIF */
   #pipefire{
     z-index: 1;
@@ -227,6 +225,7 @@ nav ul.sub li ul.sub {
     padding-top: 2.5%;
     display: none;
   }
+  
   #name{
     font-size: 20px;
 
@@ -238,23 +237,25 @@ nav ul.sub li ul.sub {
   /* ---------------------- */
  /* DISPLAYS MAZE SOLVING VISUALIZER */
   #astar{
-
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     display: none;
     padding-top: 2%;
   }
+
   #maze{
     border: solid;
     border-color: rgb(0,0,0);
     
   }
+
   #outcome{
     color: rgb(255,255,255);
     font-family: 'Share Tech Mono', monospace;
     font-size: 20px;
   }
+
   .mazebtn{
     width: 80px;
     height: 30px;
@@ -263,10 +264,10 @@ nav ul.sub li ul.sub {
     font-family: 'Share Tech Mono', monospace;
     line-height: 30px;
     text-align: center;
-    /* position: relative; */
     outline: none;
     border: none;
   }
+
   .mazebtn:hover{
     color: white;
     text-decoration: none;
@@ -276,7 +277,6 @@ nav ul.sub li ul.sub {
   /* ---------------------- */
   /* DISPLAYS GAME */
   #game{
-    /* display: none; */
     font-family: 'Share Tech Mono', monospace;
     font-size: 20px;
     text-align: center;
@@ -285,34 +285,16 @@ nav ul.sub li ul.sub {
     flex-direction: column;
     flex-wrap: wrap;
   }
+
   #hwcanvas{
     display: none;
     width: 480px;
     height: 480px;
     border: 1px solid black;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
   }
+
   #settings{
     color: rgb(255,255,240);
     display: none;
     
   }
-
-  /* @keyframes spin {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(-360deg); }
-  }
-  @keyframes depth {
-    0% { text-shadow: 0 0 black; }
-    25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
-    50% { text-shadow: 0 0 black; }
-    75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
-    100% { text-shadow: 0 0 black; }
-  } */
-
-
-
-  

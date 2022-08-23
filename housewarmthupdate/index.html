@@ -91,9 +91,15 @@
                 </div>
                 <p id="outcome">Click the purple squares to build a maze.</p>
             </div>
+
             <div id="settings">
+
+                <button id="darktheme">dark theme</button>
+                <button id="lighttheme">light theme</button>
+
                 <span>edit accent style</span>
                 <div class="color-picker"></div>
+
             </div>
             
         </div>
@@ -102,7 +108,6 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-        
 
         <script 
             src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" 
@@ -167,14 +172,12 @@
             let rgbaColorOut = '';
             pickr.on('change', (color, instance) => {
                 const rgbaColor = color.toRGBA().toString();
-  
+
                 document.getElementById("navi").style.borderColor = rgbaColor; 
                 document.getElementById("navlower").style.borderColor = rgbaColor; 
                 document.getElementById("main").style.borderColor = rgbaColor; 
 
                 rgbaColorOut = rgbaColor;
-    
-             
             })
             
             //change color on mouseover title
@@ -186,7 +189,11 @@
             }
 
             function MouseLeaveTitle() {
-                document.getElementById("title").style.color = 'rgba(255,255,240, .85)';
+                if(darkthemeis){
+                    document.getElementById("title").style.color = 'rgba(255,255,240, .85)';
+                }else{
+                    document.getElementById("title").style.color = 'rgba(0,0,0, 1)';
+                }
             }
 
              //change color on mouseover home button
@@ -194,6 +201,7 @@
             document.getElementById("homebtn").onmouseout = MouseLeaveHomeBtn;
 
             function MouseEnterHomeBtn() {
+                
                 document.getElementById("homebtn").style.backgroundColor = rgbaColorOut;
             }
             function MouseLeaveHomeBtn() {
@@ -211,8 +219,7 @@
                 document.getElementById("menubtnhov").style.backgroundColor = "";
             }
 
-            
-             //change color on mouseover game button
+            //change color on mouseover game button
             document.getElementById("gamebtnhov").onmouseenter = MouseEnterGame;
             document.getElementById("gamebtnhov").onmouseout = MouseLeaveGame;
 
@@ -257,12 +264,18 @@
             }
           
         </script>
+
         <script src="javadance.js"></script>
         <script src="hwgame.js"></script>
         <script src="mazerunner.js"></script>
-        
+
         <script>
+       
+        </script>
             
+        <script>
+
+            //button click events to change pages 
             $(document).ready(function() {
                 $("#homebtn").click(function(){
                     $("#can3").css("display","none");
@@ -339,8 +352,65 @@
                     $("#settings").css("display","none");
                 });  
             });
-    
-    
+
+            //light and dark theme toggle
+            let darkthemeis = true;
+            let lightthemeis = false;
+
+            document.getElementById("darktheme").onclick = toggleDT;
+            document.getElementById("lighttheme").onclick = toggleLT;
+
+            function toggleDT(){
+                lightthemeis = false;
+                darkthemeis = true;
+                document.getElementById("can1").style.backgroundColor = 'rgba(0,0,0, 1)';
+                document.getElementById("navi").style.backgroundColor = 'rgba(255,255,240, .2)';
+                document.getElementById("navlower").style.backgroundColor =  'rgba(255,255,240, .35)';
+                document.getElementById("main").style.backgroundColor = 'rgba(255,255,240, .2)';
+                document.getElementById("navi").style.borderColor = 'rgba(255,255,255,1)'; 
+                document.getElementById("navlower").style.borderColor = 'rgba(255,255,255,1)'; 
+                document.getElementById("main").style.borderColor = 'rgba(255,255,255,1)'; 
+                document.getElementById("title").style.color = 'rgba(255,255,240, .85)'; 
+                document.getElementById("vers").style.color = 'rgba(255,255,240, 1)'; 
+            }
+
+            function toggleLT(){
+                lightthemeis = true;
+                darkthemeis = false;
+                document.getElementById("can1").style.backgroundColor = 'rgba(255,255,240, 1)';
+                document.getElementById("navi").style.backgroundColor = 'rgba(0,0,0, .29)';
+                document.getElementById("navlower").style.backgroundColor =  'rgba(255,255,240, .82)';
+                document.getElementById("main").style.backgroundColor = 'rgba(0,0,0, .49)';
+                document.getElementById("navi").style.borderColor = 'rgba(0,0,0,1)'; 
+                document.getElementById("navlower").style.borderColor = 'rgba(0,0,0,1)'; 
+                document.getElementById("main").style.borderColor = 'rgba(0,0,0,1)'; 
+                document.getElementById("title").style.color = 'rgba(0,0,0,1)'; 
+                document.getElementById("vers").style.color = 'rgba(0,0,0,1)'; 
+            }
+
+            if (lightthemeis) {
+                document.getElementById("can1").style.backgroundColor = 'rgba(255,255,240, 1)';
+                document.getElementById("navi").style.backgroundColor = 'rgba(0,0,0, .29)';
+                document.getElementById("navlower").style.backgroundColor =  'rgba(255,255,240, .82)';
+                document.getElementById("main").style.backgroundColor = 'rgba(0,0,0, .49)';
+                document.getElementById("navi").style.borderColor = 'rgba(0,0,0,1)'; 
+                document.getElementById("navlower").style.borderColor = 'rgba(0,0,0,1)'; 
+                document.getElementById("main").style.borderColor = 'rgba(0,0,0,1)'; 
+                document.getElementById("title").style.color = 'rgba(0,0,0,1)'; 
+                document.getElementById("vers").style.color = 'rgba(0,0,0,1)'; 
+            } else {
+                document.getElementById("can1").style.backgroundColor = 'rgba(0,0,0, 1)';
+                document.getElementById("navi").style.backgroundColor = 'rgba(255,255,240, .2)';
+                document.getElementById("navlower").style.backgroundColor =  'rgba(255,255,240, .35)';
+                document.getElementById("main").style.backgroundColor = 'rgba(255,255,240, .2)';
+                document.getElementById("navi").style.borderColor = 'rgba(255,255,255,1)'; 
+                document.getElementById("navlower").style.borderColor = 'rgba(255,255,255,1)'; 
+                document.getElementById("main").style.borderColor = 'rgba(255,255,255,1)'; 
+                document.getElementById("title").style.color = 'rgba(255,255,240, .85)'; 
+                document.getElementById("vers").style.color = 'rgba(255,255,240, 1)'; 
+            }
+
+            //dropdown menu animation
             $(function(){
                 $(".dropmenu li").hover(
                     function(){
@@ -351,8 +421,6 @@
                     }
                 );
             });
-
-            
 
         </script>
             

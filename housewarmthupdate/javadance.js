@@ -1,12 +1,9 @@
-
 let canvas1 = document.getElementById("can1");
 let ctx1 = canvas1.getContext('2d');
 ctx1.canvas.width = window.innerWidth;
 ctx1.canvas.height = window.innerHeight;
 
-
 let particlesArray;
-
 
 let mouse =  {
     x: null,
@@ -82,23 +79,42 @@ function init() {
     }
 }
 
-
 function connect(){
+    if(!darkthemeis){
     let opacVal = 1;
     for(let a = 0; a < particlesArray.length; a++) {
         for(let b = a; b < particlesArray.length; b++) {
             let distance = (( particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
             if (distance < (canvas1.width/7) * (canvas1.height/7)) {
                 opacVal = 1 - (distance/20000);
-                ctx1.strokeStyle = 'rgba(32, 178, 170,' + opacVal + ')';
-                ctx1.lineWidth = 1.5;
-                ctx1.beginPath();
-                ctx1.moveTo(particlesArray[a].x, particlesArray[a].y);
-                ctx1.lineTo(particlesArray[b].x, particlesArray[b].y);
-                ctx1.stroke();
+                    ctx1.strokeStyle = 'rgba(0, 0, 0,' + opacVal + ')';
+                    ctx1.lineWidth = 1.5;
+                    ctx1.beginPath();
+                    ctx1.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx1.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx1.stroke();
+                }
             }
         }
+    } else {
+        let opacVal = 1;
+        for(let a = 0; a < particlesArray.length; a++) {
+            for(let b = a; b < particlesArray.length; b++) {
+                let distance = (( particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                if (distance < (canvas1.width/7) * (canvas1.height/7)) {
+                    opacVal = 1 - (distance/20000);
+                        ctx1.strokeStyle = 'rgba(32, 178, 170,' + opacVal + ')';
+                        ctx1.lineWidth = 1.5;
+                        ctx1.beginPath();
+                        ctx1.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx1.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx1.stroke();
+                    }
+                }
+            }
+
     }
+    
 }
 
 let fps2, fpsInterval2, startTime2, now2, then2, elapsed2;
