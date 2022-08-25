@@ -298,6 +298,10 @@ nav ul.sub li ul.sub {
     display: none;
   }
 
+  #gallery{
+    display: none;
+  }
+
   .tippy-box[data-theme~='dark'] {
     background-color: rgba(0,0,0, .8);
     color: white;

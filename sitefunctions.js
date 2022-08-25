@@ -135,6 +135,17 @@ function MouseLeaveSet() {
     document.getElementById("setbtnhov").style.backgroundColor = "";
 }
 
+//change color on mouseover gallery button
+document.getElementById("gallerybtnhov").onmouseenter = MouseEnterGal;
+document.getElementById("gallerybtnhov").onmouseout = MouseLeaveGal;
+
+function MouseEnterGal() {
+    document.getElementById("gallerybtnhov").style.backgroundColor = rgbaColorOut;
+}
+function MouseLeaveGal() {
+    document.getElementById("gallerybtnhov").style.backgroundColor = "";
+}
+
 //light and dark theme toggle
 let darkthemeis = true;
 let lightthemeis = false;
@@ -203,8 +214,10 @@ $(document).ready(function() {
         $("#main").css("display","flex");
         $("#home").css("display","flex");
         $("#settings").css("display","none");
+        $("#gallery").css("display","none");
     });  
 });
+
 $(document).ready(function() {
     $("#gamebtn").click(function(){
         $("#can3").css("display","none");
@@ -215,6 +228,7 @@ $(document).ready(function() {
         $("#main").css("display","flex");
         $("#home").css("display","none");
         $("#settings").css("display","none");
+        $("#gallery").css("display","none");
     });  
 });
 
@@ -228,6 +242,7 @@ $(document).ready(function() {
         $("#main").css("display","flex");
         $("#astar").css("display","flex");
         $("#settings").css("display","none");
+        $("#gallery").css("display","none");
     });
 });
 
@@ -241,6 +256,7 @@ $(document).ready(function() {
         $("#main").css("display","flex");
         $("#resume").css("display","block");
         $("#settings").css("display","none");
+        $("#gallery").css("display","none");
     });  
 });
 
@@ -254,6 +270,7 @@ $(document).ready(function() {
         $("#main").css("display","flex");
         $("#resume").css("display","none");
         $("#settings").css("display","block");
+        $("#gallery").css("display","none");
     });  
 });
 
@@ -267,6 +284,21 @@ $(document).ready(function() {
         $("#main").css("display","flex");
         $("#home").css("display","flex");
         $("#settings").css("display","none");
+        $("#gallery").css("display","none");
+    });  
+});
+
+$(document).ready(function() {
+    $("#gallerybtn").click(function(){
+        $("#home").css("display","none");
+        $("#can3").css("display","none");
+        $("#astar").css("display","none");
+        $("#game").css("display","none");
+        $("#hwcanvas").css("display","none");
+        $("#main").css("display","flex");
+        $("#resume").css("display","none");
+        $("#settings").css("display","none");
+        $("#gallery").css("display","block");
     });  
 });
 
@@ -288,7 +320,7 @@ tippy('#homebtn', {
     content: "Home",
     // placement: 'bottom',
     theme: 'dark',
-    arrow: false,
+    arrow: true,
 });
 
 tippy('#menubtnhov', {
@@ -301,5 +333,5 @@ tippy('#setbtnhov', {
     content: "Settings",
     placement: 'right',
     theme: 'dark',
-    arrow: false,
+    arrow: true,
 });
