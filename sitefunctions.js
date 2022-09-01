@@ -165,6 +165,8 @@ function toggleDT(){
     document.getElementById("main").style.borderColor = 'rgba(255,255,255,1)'; 
     document.getElementById("title").style.color = 'rgba(255,255,240, .85)'; 
     document.getElementById("vers").style.color = 'rgba(255,255,240, 1)'; 
+    document.getElementById("darktheme").style.textDecoration = 'underline'; 
+    document.getElementById("lighttheme").style.textDecoration = 'none'; 
 }
 
 function toggleLT(){
@@ -179,6 +181,8 @@ function toggleLT(){
     document.getElementById("main").style.borderColor = 'rgba(0,0,0,1)'; 
     document.getElementById("title").style.color = 'rgba(0,0,0,1)'; 
     document.getElementById("vers").style.color = 'rgba(0,0,0,1)'; 
+    document.getElementById("lighttheme").style.textDecoration = 'underline'; 
+    document.getElementById("darktheme").style.textDecoration = 'none'; 
 }
 
 if (lightthemeis) {
@@ -191,6 +195,8 @@ if (lightthemeis) {
     document.getElementById("main").style.borderColor = 'rgba(0,0,0,1)'; 
     document.getElementById("title").style.color = 'rgba(0,0,0,1)'; 
     document.getElementById("vers").style.color = 'rgba(0,0,0,1)'; 
+    document.getElementById("lighttheme").style.textDecoration = 'underline'; 
+    document.getElementById("darktheme").style.textDecoration = 'none'; 
 } else {
     document.getElementById("can1").style.backgroundColor = 'rgba(0,0,0, 1)';
     document.getElementById("navi").style.backgroundColor = 'rgba(255,255,240, .2)';
@@ -201,6 +207,8 @@ if (lightthemeis) {
     document.getElementById("main").style.borderColor = 'rgba(255,255,255,1)'; 
     document.getElementById("title").style.color = 'rgba(255,255,240, .85)'; 
     document.getElementById("vers").style.color = 'rgba(255,255,240, 1)'; 
+    document.getElementById("darktheme").style.textDecoration = 'underline'; 
+    document.getElementById("lighttheme").style.textDecoration = 'none'; 
 }
 
 //button click events to change pages 

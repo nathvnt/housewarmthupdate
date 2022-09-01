@@ -307,3 +307,61 @@ nav ul.sub li ul.sub {
     color: white;
     font-family: 'Share Tech Mono', monospace;
   }
+
+  #themenav{
+    padding-top: 8%;
+    /* width: 70%;
+    margin-left: 15%;
+    padding-top: 1%;
+    background-color:rgba(255,255,240, .35);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+    align-items: center;
+    z-index: -1; */
+    /* border: solid;
+    border-top: none; */
+    /* justify-content: center; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+  }
+  #lighttheme{
+    width: 120px;
+    height: 40px;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    text-decoration: none;
+    border-style: none;
+  }
+  #lighttheme:hover{
+    width: 120px;
+    height: 40px;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    text-decoration: none;
+    border: solid;
+  }
+
+  #darktheme{
+    width: 120px;
+    height: 40px;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    text-decoration: none;
+    border-style: none;
+  }
+  #darktheme:hover{
+    width: 120px;
+    height: 40px;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    text-decoration: none;
+    border: solid;
+  }
